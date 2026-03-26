@@ -1,0 +1,14 @@
+Package: toolbox
+Title: A collection of front-end function to control complex analysis embedded in docker containers
+Version: 0.0.0.1
+Authors@R: person("Raffaele", "Calogero", email = "raffaele.calogero@unito.it", role = c("aut", "cre"))
+Description: A collection of front-end function to control complex analysis embedded in docker container.
+Imports: jsonlite
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
