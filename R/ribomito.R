@@ -42,7 +42,7 @@ ribomitoQC <- function(input_dir_path, infile, rownames_format, kit, beads_locat
 
   # Executing the docker job
   run_in_docker(
-    image_name = paste0("ribomito:latest"),
+    image_name = paste0("repbioinfo/ribomito:latest"),
     volumes = list(
       c(input_dir_path, "/scratch")
     ),

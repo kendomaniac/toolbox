@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of toolbox is to ...
+The goal of toolbox is to store a set of front-end function which control scripts and workflows embedded in docker containers, to guarantee reproducibility over time and easy cross-platform execution
 
 ## Installation
 
