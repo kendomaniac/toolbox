@@ -1,6 +1,6 @@
 #' ribomitoQC
 #'
-#' @descritpion This function perform a set of QC on single cell RNAseq, single cell nuclear RNAseq, Takara Seeker dense matrix, visium HD. It returns statistics data in csv format as well as plots QC plots.
+#' @description This function perform a set of QC on single cell RNAseq, single cell nuclear RNAseq, Takara Seeker dense matrix, visium HD. It returns statistics data in csv format as well as plots QC plots.
 #' @param input_dir_path, a character string indicating the path of the directory containing data to be used
 #' @param infile Path to dense counts file OR to a MatrixMarket .mtx file OR to a directory containing matrix.mtx / barcodes.tsv / features.tsv
 #' @param out_metrics Output CSV for per-cell metrics
