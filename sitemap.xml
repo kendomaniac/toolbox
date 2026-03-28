@@ -1,0 +1,26 @@
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://kendomaniac.github.io/toolbox/404.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/LICENSE-text.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/LICENSE.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/articles/index.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/articles/toolbox.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/authors.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/index.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/reference/absolute_path_mapper.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/reference/detect_container_runtime.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/reference/docker_mount_mapper.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/reference/has_docker.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/reference/has_singularity.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/reference/index.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/reference/is_running_in_docker.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/reference/is_running_in_singularity.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/reference/modifier_timed_directory.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/reference/normalize_path.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/reference/ribomitoQC.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/reference/run_in_container.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/reference/run_in_docker.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/reference/run_in_singularity.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/reference/skeleton.html</loc></url>
+<url><loc>https://kendomaniac.github.io/toolbox/reference/with_scratch.html</loc></url>
+</urlset>
+
