@@ -12,3 +12,4 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: https://kendomaniac.github.io/toolbox/
