@@ -42,7 +42,7 @@ ribomitoQC(
 \item{features_file}{Optional explicit path to features.tsv (overrides inference)}
 }
 \description{
-ribomitoQC
+This function perform a set of QC on single cell RNAseq, single cell nuclear RNAseq, Takara Seeker dense matrix, visium HD. It returns statistics data in csv format as well as plots QC plots.
 }
 \examples{
 \dontrun{

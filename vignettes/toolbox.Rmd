@@ -22,12 +22,19 @@ library(toolbox)
 
 This package is a generalised container for a variety of front-end function that execute complex workflows embedded in docker container.
 The package includes a set of core functions which are required to allow the front-end function to work in different environments like MAC OS, Windows and Linux.
-The over all structure of the front-end is shown in figure1, knitr::include_graphics("figures/fig1.png").
-The package contains also a very simple skeleton function that can be used as template for the creatiion of a new function. the elements to be modified in the skeleton are shown in figure 2, knitr::include_graphics("figures/fig2.png"), panel A sow the skeleton and panel B the modifications made in the ribomito_qc function.
+The over all structure of the front-end is shown in figure1
+```{r, echo=FALSE}
+knitr::include_graphics("figures/fig1.png")
+```
+The package contains also a very simple skeleton function that can be used as template for the creation of a new function. the elements to be modified in the skeleton are shown in figure 2, 
+```{r, echo=FALSE}
+knitr::include_graphics("figures/fig2.png")
+```
+Panel A show the skeleton and panel B the modifications made in the ribomito_qc function.
 **IMPORTANT**: The input-dir_path in sketelon function must not be removed! It refer to the folder where the data are located in your computer and this folder will be mount as /scratch in the docker container.
 Here, instead you can find the header of the R script present in the repbioinfo/ribomito docker container.
 
-```r
+```{r}
 #| eval: false
 #!/usr/bin/env Rscript
 
@@ -88,12 +95,26 @@ As you can see the parameters provided by the front-end function will be passed 
 This function is an evolution of the mitoRiboUmi function available in the [[rCASC package](https://kendomaniac.github.io/rCASC/reference/mitoRiboUmi.html)]. The current implementation extends the functionality of the original function to sparse matrices and provides additional QC information for several single-cell platforms, including: 10x Genomics/Illumina single-cell RNA-seq (dense and sparse matrices), 10x Genomics single-nucleus RNA-seq (sparse matrices), Takara Seeker spatial transcriptomics (dense comma-separated matrices), and 10x Genomics Visium HD (sparse matrices). Support for the latter is still under development and requires further refinement.
 An example dataset for testing ribomitoQC is available on [[Zenodo](https://doi.org/10.5281/zenodo.19216861)]. 
 
-Figure 3 knitr::include_graphics("figures/fig3.png") shows the output for scRNA-seq data generated with the 10x Genomics/Illumina single-cell RNA-seq platform. Panel A reports the percentage of counts associated with mitochondrial proteins plotted against the percentage of counts associated with ribosomal proteins. Each dot represents a cell and is colored according to the number of detected genes. In this case, we used the threshold defined in the [[rCASC paper](https://academic.oup.com/gigascience/article/8/9/giz105/5565135)] paper, where more than 2 UMIs are required for a gene to be considered detected. Panel B shows the frequency distribution of cells across ranges of detected genes. Panel C provides the data used to generate the plot shown in Panel A.
+Figure 3, shows the output for scRNA-seq data generated with the 10x Genomics/Illumina single-cell RNA-seq platform. 
+```{r, echo=FALSE}
+knitr::include_graphics("figures/fig3.png")
+```
 
-Figure 4 knitr::include_graphics("figures/fig4.png") shows the output for single-nucleus RNA-seq data generated with the 10x Genomics platform. Panel A shows MALAT1 long non-coding RNA expression plotted against the percentage of mitochondrial gene counts. MALAT1 appears to be a marker of good cell quality when associated with low mitochondrial contamination
-. Panel B reports the percentage of counts associated with mitochondrial proteins plotted against the percentage associated with ribosomal proteins. Each dot represents a cell and is colored according to the number of detected genes. Also in this case, we used the threshold defined in the [[rCASC paper](https://academic.oup.com/gigascience/article/8/9/giz105/5565135)] paper, where more than 2 UMIs are required to call a gene as detected. Panel C shows the frequency distribution of cells across ranges of detected genes. Panel D provides the data used to generate the plots shown in Panels A and B.
+Panel A reports the percentage of counts associated with mitochondrial proteins plotted against the percentage of counts associated with ribosomal proteins. Each dot represents a cell and is colored according to the number of detected genes. In this case, we used the threshold defined in the [[rCASC paper](https://academic.oup.com/gigascience/article/8/9/giz105/5565135)] paper, where more than 2 UMIs are required for a gene to be considered detected. Panel B shows the frequency distribution of cells across ranges of detected genes. Panel C provides the data used to generate the plot shown in Panel A.
 
-Figure 5 knitr::include_graphics("figures/fig5.png") shows the output for Takara Seeker spatial transcriptomics data. Panel A reports the percentage of counts associated with mitochondrial proteins plotted against the percentage associated with ribosomal proteins. Each dot represents a cell and is colored according to the number of detected genes. As above, we used the threshold defined in the [rCASC paper](https://academic.oup.com/gigascience/article/8/9/giz105/5565135) paper, where more than 2 UMIs are required for a gene to be considered detected. Panel B shows the same data mapped according to tissue location. Panel C shows the frequency distribution of cells across ranges of detected genes. Panel D provides the data used to generate the plots shown in Panels A and B. To generate this output, the input must also include a file describing the spatial location of each barcode.
+Figure 4  shows the output for single-nucleus RNA-seq data generated with the 10x Genomics platform. 
+```{r, echo=FALSE} 
+knitr::include_graphics("figures/fig4.png")
+```
+
+Panel A shows MALAT1 long non-coding RNA expression plotted against the percentage of mitochondrial gene counts. MALAT1 appears to be a marker of good cell quality when associated with low mitochondrial contamination. Panel B reports the percentage of counts associated with mitochondrial proteins plotted against the percentage associated with ribosomal proteins. Each dot represents a cell and is colored according to the number of detected genes. Also in this case, we used the threshold defined in the [[rCASC paper](https://academic.oup.com/gigascience/article/8/9/giz105/5565135)] paper, where more than 2 UMIs are required to call a gene as detected. Panel C shows the frequency distribution of cells across ranges of detected genes. Panel D provides the data used to generate the plots shown in Panels A and B.
+
+Figure 5 shows the output for Takara Seeker spatial transcriptomics data.
+```{r, echo=FALSE}
+knitr::include_graphics("figures/fig5.png")
+```
+Panel A reports the percentage of counts associated with mitochondrial proteins plotted against the percentage associated with ribosomal proteins. Each dot represents a cell and is colored according to the number of detected genes. As above, we used the threshold defined in the [rCASC paper](https://academic.oup.com/gigascience/article/8/9/giz105/5565135) paper, where more than 2 UMIs are required for a gene to be considered detected. Panel B shows the same data mapped according to tissue location. Panel C shows the frequency distribution of cells across ranges of detected genes. Panel D provides the data used to generate the plots shown in Panels A and B. To generate this output, the input must also include a file describing the spatial location of each barcode.
+
 
 
 
