@@ -1,6 +1,6 @@
 Package: toolbox
 Title: A collection of front-end function to control complex analysis embedded in docker containers
-Version: 0.0.0.1
+Version: 0.0.0.2
 Authors@R: person("Raffaele", "Calogero", email = "raffaele.calogero@gmail.com", role = c("aut", "cre"))
 Description: A collection of front-end function to control complex analysis embedded in docker container.
 Imports: jsonlite
