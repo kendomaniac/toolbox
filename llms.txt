@@ -7,6 +7,8 @@ in docker container.
 
 - [`absolute_path_mapper()`](https://kendomaniac.github.io/toolbox/reference/absolute_path_mapper.md)
   : Gets the absolute path of a file.
+- [`combatRef()`](https://kendomaniac.github.io/toolbox/reference/combatRef.md)
+  : combatRef
 - [`detect_container_runtime()`](https://kendomaniac.github.io/toolbox/reference/detect_container_runtime.md)
   : Check and Identify the Container Runtime
 - [`docker_mount_mapper()`](https://kendomaniac.github.io/toolbox/reference/docker_mount_mapper.md)

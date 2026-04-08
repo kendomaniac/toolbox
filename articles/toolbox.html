@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">toolbox</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,16 +68,18 @@ function that execute complex workflows embedded in docker container.
 The package includes a set of core functions which are required to allow
 the front-end function to work in different environments like MAC OS,
 Windows and Linux. The over all structure of the front-end is shown in
-figure1 <img src="figures/fig1.png"><!-- --> The package contains also
-a very simple skeleton function that can be used as template for the
-creation of a new function. the elements to be modified in the skeleton
-are shown in figure 2, <img src="figures/fig2.png"><!-- --> Panel A
-show the skeleton and panel B the modifications made in the ribomito_qc
-function. <strong>IMPORTANT</strong>: The input-dir_path in sketelon
-function must not be removed! It refer to the folder where the data are
-located in your computer and this folder will be mount as /scratch in
-the docker container. Here, instead you can find the header of the R
-script present in the repbioinfo/ribomito docker container.</p>
+figure1
+<img src="figures/fig1.png" class="r-plt" alt="" width="60%" style="display: block; margin: auto;">
+The package contains also a very simple skeleton function that can be
+used as template for the creation of a new function. the elements to be
+modified in the skeleton are shown in figure 2,
+<img src="figures/fig2.png" class="r-plt" alt="" width="100%" style="display: block; margin: auto;">
+Panel A show the skeleton and panel B the modifications made in the
+ribomito_qc function. <strong>IMPORTANT</strong>: The input-dir_path in
+sketelon function must not be removed! It refer to the folder where the
+data are located in your computer and this folder will be mount as
+/scratch in the docker container. Here, instead you can find the header
+of the R script present in the repbioinfo/ribomito docker container.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">#!/usr/bin/env Rscript</span></span>
 <span></span>
@@ -148,7 +150,8 @@ Visium HD (sparse matrices). Support for the latter is still under
 development and requires further refinement. An example dataset for
 testing ribomitoQC is available on [<a href="https://doi.org/10.5281/zenodo.19216861" class="external-link">Zenodo</a>].</p>
 <p>Figure 3, shows the output for scRNA-seq data generated with the 10x
-Genomics/Illumina single-cell RNA-seq platform. <img src="figures/fig3.png"><!-- --></p>
+Genomics/Illumina single-cell RNA-seq platform.
+<img src="figures/fig3.png" class="r-plt" alt="" width="60%" style="display: block; margin: auto;"></p>
 <p>Panel A reports the percentage of counts associated with
 mitochondrial proteins plotted against the percentage of counts
 associated with ribosomal proteins. Each dot represents a cell and is
@@ -159,7 +162,8 @@ considered detected. Panel B shows the frequency distribution of cells
 across ranges of detected genes. Panel C provides the data used to
 generate the plot shown in Panel A.</p>
 <p>Figure 4 shows the output for single-nucleus RNA-seq data generated
-with the 10x Genomics platform. <img src="figures/fig4.png"><!-- --></p>
+with the 10x Genomics platform.
+<img src="figures/fig4.png" class="r-plt" alt="" width="60%" style="display: block; margin: auto;"></p>
 <p>Panel A shows MALAT1 long non-coding RNA expression plotted against
 the percentage of mitochondrial gene counts. MALAT1 appears to be a
 marker of good cell quality when associated with low mitochondrial
@@ -173,11 +177,13 @@ detected. Panel C shows the frequency distribution of cells across
 ranges of detected genes. Panel D provides the data used to generate the
 plots shown in Panels A and B.</p>
 <p>Figure 5 shows the output for Takara Seeker spatial transcriptomics
-data. <img src="figures/fig5.png"><!-- --> Panel A reports the
-percentage of counts associated with mitochondrial proteins plotted
-against the percentage associated with ribosomal proteins. Each dot
-represents a cell and is colored according to the number of detected
-genes. As above, we used the threshold defined in the <a href="https://academic.oup.com/gigascience/article/8/9/giz105/5565135" class="external-link">rCASC
+data.
+<img src="figures/fig5.png" class="r-plt" alt="" width="60%" style="display: block; margin: auto;">
+Panel A reports the percentage of counts associated with mitochondrial
+proteins plotted against the percentage associated with ribosomal
+proteins. Each dot represents a cell and is colored according to the
+number of detected genes. As above, we used the threshold defined in the
+<a href="https://academic.oup.com/gigascience/article/8/9/giz105/5565135" class="external-link">rCASC
 paper</a> paper, where more than 2 UMIs are required for a gene to be
 considered detected. Panel B shows the same data mapped according to
 tissue location. Panel C shows the frequency distribution of cells
@@ -185,6 +191,30 @@ across ranges of detected genes. Panel D provides the data used to
 generate the plots shown in Panels A and B. To generate this output, the
 input must also include a file describing the spatial location of each
 barcode.</p>
+</div>
+<div class="section level3">
+<h3 id="combatref">combatRef<a class="anchor" aria-label="anchor" href="#combatref"></a>
+</h3>
+<p>This function is the front end to the Combat-ref published by <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11718288/" class="external-link">Zhang
+2024</a>. Thsi batch effect correction method enhances the statistical
+power and reliability of differential expression analysis in RNA-seq
+data. It is built on the foundations of ComBat-seq, and employs a
+negative binomial model to adjust count data but innovates by using a
+pooled dispersion parameter for entire batches and preserving count data
+for the reference batch.</p>
+<p>In figure 6, it is shown the structure of the input files. In panel A
+it is shown the tab separated count table and in panel B the metadata
+which is saved in a comma separated file. Please not that column names
+in counts tabla and rownames in metadata table must be co-linear.
+<img src="figures/fig6.png" class="r-plt" alt="" width="60%" style="display: block; margin: auto;"></p>
+<p>In Figure 7 it is shown the effect of Combat-ref adjustment on <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE119004" class="external-link">GSE119004</a>
+dataset. This dataset was generated by <a href="https://pubmed.ncbi.nlm.nih.gov/31694835/" class="external-link">Shi et al.</a>.
+Specifically they provide RNAseq from PDX, organoids and patient RNA.
+Panel A shows the batches referred to the uncorrected samples. Panel B
+show the same data after batch correction. It is notable that PDXs and
+organoids better aggregate with the corresponding patient after batch
+correction. For semplicity only patient 274 is shown
+<img src="figures/fig7.png" class="r-plt" alt="" width="60%" style="display: block; margin: auto;"></p>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
