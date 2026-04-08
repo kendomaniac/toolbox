@@ -23,11 +23,11 @@ library(toolbox)
 This package is a generalised container for a variety of front-end function that execute complex workflows embedded in docker container.
 The package includes a set of core functions which are required to allow the front-end function to work in different environments like MAC OS, Windows and Linux.
 The over all structure of the front-end is shown in figure1
-```{r, echo=FALSE}
+```{r, echo=FALSE, out.width="60%", fig.align='center'}
 knitr::include_graphics("figures/fig1.png")
 ```
 The package contains also a very simple skeleton function that can be used as template for the creation of a new function. the elements to be modified in the skeleton are shown in figure 2, 
-```{r, echo=FALSE}
+```{r, echo=FALSE, out.width="100%", fig.align='center'}
 knitr::include_graphics("figures/fig2.png")
 ```
 Panel A show the skeleton and panel B the modifications made in the ribomito_qc function.
@@ -96,25 +96,37 @@ This function is an evolution of the mitoRiboUmi function available in the [[rCA
 An example dataset for testing ribomitoQC is available on [[Zenodo](https://doi.org/10.5281/zenodo.19216861)]. 
 
 Figure 3, shows the output for scRNA-seq data generated with the 10x Genomics/Illumina single-cell RNA-seq platform. 
-```{r, echo=FALSE}
+```{r, echo=FALSE, out.width="60%", fig.align='center'}
 knitr::include_graphics("figures/fig3.png")
 ```
 
 Panel A reports the percentage of counts associated with mitochondrial proteins plotted against the percentage of counts associated with ribosomal proteins. Each dot represents a cell and is colored according to the number of detected genes. In this case, we used the threshold defined in the [[rCASC paper](https://academic.oup.com/gigascience/article/8/9/giz105/5565135)] paper, where more than 2 UMIs are required for a gene to be considered detected. Panel B shows the frequency distribution of cells across ranges of detected genes. Panel C provides the data used to generate the plot shown in Panel A.
 
 Figure 4  shows the output for single-nucleus RNA-seq data generated with the 10x Genomics platform. 
-```{r, echo=FALSE} 
+```{r, echo=FALSE, out.width="60%", fig.align='center'} 
 knitr::include_graphics("figures/fig4.png")
 ```
 
 Panel A shows MALAT1 long non-coding RNA expression plotted against the percentage of mitochondrial gene counts. MALAT1 appears to be a marker of good cell quality when associated with low mitochondrial contamination. Panel B reports the percentage of counts associated with mitochondrial proteins plotted against the percentage associated with ribosomal proteins. Each dot represents a cell and is colored according to the number of detected genes. Also in this case, we used the threshold defined in the [[rCASC paper](https://academic.oup.com/gigascience/article/8/9/giz105/5565135)] paper, where more than 2 UMIs are required to call a gene as detected. Panel C shows the frequency distribution of cells across ranges of detected genes. Panel D provides the data used to generate the plots shown in Panels A and B.
 
 Figure 5 shows the output for Takara Seeker spatial transcriptomics data.
-```{r, echo=FALSE}
+```{r, echo=FALSE, out.width="60%", fig.align='center'}
 knitr::include_graphics("figures/fig5.png")
 ```
 Panel A reports the percentage of counts associated with mitochondrial proteins plotted against the percentage associated with ribosomal proteins. Each dot represents a cell and is colored according to the number of detected genes. As above, we used the threshold defined in the [rCASC paper](https://academic.oup.com/gigascience/article/8/9/giz105/5565135) paper, where more than 2 UMIs are required for a gene to be considered detected. Panel B shows the same data mapped according to tissue location. Panel C shows the frequency distribution of cells across ranges of detected genes. Panel D provides the data used to generate the plots shown in Panels A and B. To generate this output, the input must also include a file describing the spatial location of each barcode.
 
+## combatRef
+This function is the front end to the Combat-ref published by [Zhang 2024](https://pmc.ncbi.nlm.nih.gov/articles/PMC11718288/). Thsi batch effect correction method enhances the statistical power and reliability of differential expression analysis in RNA-seq data. It is built on the foundations of ComBat-seq, and employs a negative binomial model to adjust count data but innovates by using a pooled dispersion parameter for entire batches and preserving count data for the reference batch.
+
+In figure 6, it is shown the structure of the input files. In panel A it is shown the tab separated count table and in panel B the metadata which is saved in a comma separated file. Please not that column names in counts tabla and rownames in metadata table must be co-linear.
+```{r, echo=FALSE, out.width="60%", fig.align='center'}
+knitr::include_graphics("figures/fig6.png")
+```
+
+In Figure 7 it is shown the effect of Combat-ref adjustment on  [GSE119004](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE119004) dataset. This dataset was generated by [Shi et al.](https://pubmed.ncbi.nlm.nih.gov/31694835/). Specifically they provide RNAseq from PDX, organoids and patient RNA. Panel A shows the batches referred to the uncorrected samples. Panel B show the same data after batch correction. It is notable that PDXs and organoids better aggregate with the corresponding patient after batch correction. For semplicity only patient 274 is shown
+```{r, echo=FALSE, out.width="60%", fig.align='center'}
+knitr::include_graphics("figures/fig7.png")
+```
 
 
 
