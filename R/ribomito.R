@@ -7,7 +7,7 @@
 #' @param out_freq Output CSV for N.genes frequency bins
 #' @param rownames_format One of c("ensemblID:symbol","symbol"), symbol is selected for sparse matrix and ensemblID:symbol is the default for dense matrix from rCASC output
 #' @param kit One of c("scRNAseq", "scMultiomics10X", "Seeker", "visiumHD"). Note: scRNAseq works for Illumina, 10Xgenomics sparse and rCASC dense matrix
-#' @param organism One of c("hs", "mm"). Note: organism is required to the correct selection of ribosomal and mitochondrial annotation
+#' @param organism One of c("hs", "mm"). Note: organism is required to the correct selection of ribosomal and mitochondrial annotation.
 #' @param counts_threshold Threshold for "gene present" (default 2, as used in rCASC ribomito function)
 #' @param beads_location The comma separated file which contains the beads locations required for Seeker specific visualisation. For visiumHD this is  the binary visium parquet that requires parquet-tools to be installed in the system. Running parquet-tools generates a comma separate file of visium_parquet, which contains the association among barcodes as different resolution 0.02, 0.08 and 0.16 um and cellID
 #' @param mtx_file Optional explicit path to matrix.mtx (overrides inference)
