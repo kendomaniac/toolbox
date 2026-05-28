@@ -12,6 +12,7 @@ ribomitoQC(
   infile,
   rownames_format,
   kit,
+  organism,
   beads_location = NULL,
   counts_threshold = NULL,
   out_metrics = NULL,
@@ -44,6 +45,11 @@ ribomitoQC(
 
   One of c("scRNAseq", "scMultiomics10X", "Seeker", "visiumHD"). Note:
   scRNAseq works for Illumina, 10Xgenomics sparse and rCASC dense matrix
+
+- organism:
+
+  One of c("hs", "mm"). Note: organism is required to the correct
+  selection of ribosomal and mitochondrial annotation.
 
 - beads_location:
 
@@ -84,13 +90,3 @@ ribomitoQC(
 Raffaele A Calogero
 
 ## Examples
-
-``` r
-if (FALSE) { # \dontrun{
-ribomitoQC(
-  infile = "filtered_feature_bc_matrix/",
-  rownames_format="symbol",
-  kit = "scRNAseq"
-)
-} # }
-```
