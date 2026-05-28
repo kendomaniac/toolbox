@@ -9,6 +9,7 @@ ribomitoQC(
   infile,
   rownames_format,
   kit,
+  organism,
   beads_location = NULL,
   counts_threshold = NULL,
   out_metrics = NULL,
@@ -26,6 +27,8 @@ ribomitoQC(
 \item{rownames_format}{One of c("ensemblID:symbol","symbol"), symbol is selected for sparse matrix and ensemblID:symbol is the default for dense matrix from rCASC output}
 
 \item{kit}{One of c("scRNAseq", "scMultiomics10X", "Seeker", "visiumHD"). Note: scRNAseq works for Illumina, 10Xgenomics sparse and rCASC dense matrix}
+
+\item{organism}{One of c("hs", "mm"). Note: organism is required to the correct selection of ribosomal and mitochondrial annotation.}
 
 \item{beads_location}{The comma separated file which contains the beads locations required for Seeker specific visualisation. For visiumHD this is  the binary visium parquet that requires parquet-tools to be installed in the system. Running parquet-tools generates a comma separate file of visium_parquet, which contains the association among barcodes as different resolution 0.02, 0.08 and 0.16 um and cellID}
 
@@ -50,6 +53,7 @@ ribomitoQC(
   infile = "filtered_feature_bc_matrix/",
   rownames_format="symbol",
   kit = "scRNAseq"
+ organism = "hs"
 )
 }
 }
